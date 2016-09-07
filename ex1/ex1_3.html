@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ex1.3</title>
+  <style>
+    label {
+      color: blue;
+      font-size: 20pt;
+    }
+    #first {
+      font-style: italic;
+      display: block;
+      /*position: fixed;*/
+      /*bottom: 100px;*/
+    }
+    .box {
+      background-color: lightblue;
+      opacity:0.4;
+      width: 100px;
+      height: 70px;
+      border: 3px solid red;
+    }
+    .move {
+      left: 150px;
+      position: relative;
+      /*position: absolute;*/
+    }
+  </style>
+</head>
+<body>
+<label id="first" class="box move">Line 1</label>
+<label>Line 2</label>
+<div class="box move">
+  Box
+</div>
+<br>
+<label>Last line</label>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ex2.3</title>
+  <link rel="stylesheet" href="styles/dag.css">
+
+</head>
+<body>
+<script>
+  let div = document.createElement("div");
+  let text = document.createTextNode("A new node");
+  div.appendChild(text);
+
+  let list = document.getElementById('list');   // error: list is undefined
+  list.appendChild(div)
+</script>
+
+<i>List of items:</i>
+<ul id="list">
+  <li>Item1</li>
+  <li>Item2</li>
+</ul>
+
+</body>
+</html>

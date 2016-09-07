@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DAG</title>
+  <link rel="stylesheet" href="styles/dag.css">
+</head>
+<body>
+
+<div id="draw"></div>
+
+<script src="jspm_packages/system.js"></script>
+<script src="jspm.config.js"></script>
+<script>
+  System.import('src/dag.js')
+     .catch(console.error.bind(console)); // make sure any errors are print to console
+</script>
+</body>
+</html>

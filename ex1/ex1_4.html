@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ex1.4</title>
+  <style>
+    label {
+      color: blue;
+      font-size: 20pt;
+    }
+    #first {
+      font-style: italic;
+      display: block;
+      position: fixed;
+      bottom: 100px;
+    }
+    .box {
+      background-color: lightblue;
+      opacity: 0.4;
+    }
+    .box {
+      width: 100px;
+      height: 70px;
+      border: 3px solid red;
+    }
+    .box:hover {
+      background-color: yellow;
+      /*left: 200px;*/
+      border-radius: 10px;
+      animation-name: example;
+      animation-duration: 4s;
+      animation-delay: 0.5s;
+    }
+    .move {
+      position: relative;
+      /*position: absolute;*/
+      left: 150px;
+    }
+    @keyframes example {
+      0%   {background-color:red; }
+      25%  {background-color:yellow; left:200px; top:0px;}
+      50%  {background-color:blue; left:200px; top:200px;}
+      75%  {background-color:green; left:0px; top:200px;}
+      100% {background-color:red; left:150px; top:0px;}
+    }
+  </style>
+</head>
+<body>
+  <label id="first" class="box move">Line 1</label>
+  <label>Line 2</label>
+  <div class="box move">
+    Box
+  </div>
+  <br>
+  <label>Last line</label>
+</body>
+</html>
