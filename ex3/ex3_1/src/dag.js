@@ -4,6 +4,7 @@
 
 
 let chars = ['a', 'b'];
+
 let items = [
     {id: 2, name: 'One', color: 'red'},
     {id: 1, name: 'Two', color: 'green'}
@@ -17,7 +18,7 @@ let many_items = [
 
 ];
 
-cumbersome();
+// cumbersome();
 // cumbersome_insert();
 // d3_simple();
 // d3_update();
@@ -25,7 +26,7 @@ cumbersome();
 // d3_update3();
 // d3_exit();
 // d3_insert();
-// d3_insert2();
+d3_insert2();
 
 
 function cumbersome() {
@@ -39,9 +40,12 @@ function cumbersome() {
 function d3_simple() {
     d3.select('body').style('background-color', '#f0f0f0');
 
-    d3.selectAll('li').style('color', 'red').style('font-size', '24px');
+    d3.selectAll('li')
+      .style('color', 'red')
+      .style('font-size', '24px');
 
-    d3.select('#list').selectAll('li').style('color', 'green');
+    d3.select('#list').selectAll('li')
+      .style('color', 'green');
 }
 
 function cumbersome_insert() {
@@ -59,25 +63,25 @@ function d3_update() {
     let li = d3.select('#list').selectAll('li')
         .data(chars);
 
-    li.text('x');
-    // li.text(function(d) { return d;});
+    // li.text('x');
+    li.text(function(d) { return d;});
 }
 
 function d3_update2() {
     let li = d3.select('#list').selectAll('li')
         .data(items);
 
-    li.text(function(d) { return d.name;})
+    li.text(function(d, i) { return d.name;})
         .style('color', d => d.color);
 }
 
 
 function d3_update3() {
     d3.select('#list').selectAll('li')
-    .data(items, d => d.id)                // error: d is undefined for items from the html
-        // .data(items, (d, i) => d && d.id || i+1)
-        .text(function(d) { return d.name;})
-        .style('color', d => d.color);
+    // .data(items, d => d.id)                // error: d is undefined for items from the html
+        .data(items, (d, i) => d && d.id || i+1)
+      .text(function(d) { return d.name;})
+      .style('color', d => d.color);
 }
 
 function d3_exit() {
@@ -86,8 +90,8 @@ function d3_exit() {
 
     li.text(d => d);
 
-    li.exit().remove();
-    // li.exit().style('font-size', '9px');
+    // li.exit().remove();
+    li.exit().style('font-size', '9px');
 }
 
 function d3_insert() {
@@ -111,4 +115,8 @@ function d3_insert2() {
         .merge(li)
         .text( d => d.name )
         .style( 'color', d => d.color);
+
+    d3.select('#list').selectAll('li')
+      .text( d => d.name+'-foo');
+
 }

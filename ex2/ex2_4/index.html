@@ -9,10 +9,12 @@
 <body>
 <script>
   document.body.onload = addElement;
+
   function addElement() {
     let div = document.createElement("div");
     let text = document.createTextNode("A new node");
     div.appendChild(text);
+
     let list = document.getElementById('list');
     list.appendChild(div);
   }
